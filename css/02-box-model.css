@@ -2,33 +2,45 @@
    02 · БЛОЧНАЯ МОДЕЛЬ
    Что здесь пишем: box-sizing, padding, margin, border, border-radius у секций, кнопок, карточек
    ========================================================= */
-
-:root {
-   color-scheme: light dark;
---lime: oklch(0.91 0.21 125);
---violet: oklch(0.66 0.21 295);
---pink: oklch(0.74 0.19 350);
---on-lime: oklch(0.2 0.04 285);
-/* Смысловые цвета: light-dark(светлая тема, тёмная тема) */
-  --bg: light-dark(oklch(0.985 0.004 95), oklch(0.15 0.025 285));
-  --surface: light-dark(oklch(1 0 0), oklch(0.2 0.03 285));
-  --surface-2: light-dark(oklch(0.96 0.008 290), oklch(0.25 0.04 285));
-  --text: light-dark(oklch(0.2 0.03 285), oklch(0.96 0.008 295));
-  --muted: light-dark(oklch(0.5 0.03 285), oklch(0.74 0.03 290));
-  --border: light-dark(oklch(0.9 0.01 290), oklch(0.3 0.04 285));
-  --accent: light-dark(oklch(0.48 0.23 295), oklch(0.91 0.21 125));
-  --marker: light-dark(oklch(0.91 0.21 125), oklch(0.91 0.21 125 / 0.4));
-  --shadow-color: light-dark(oklch(0.3 0.08 285 / 0.14), oklch(0 0 0 / 0.45));
-
-  --gutter: clamp(1.25rem, 4vw, 2.5rem);
-  --section-space: clamp(5rem, 11vw, 9.5rem);
-  --header-h: 4.5rem;
-  --radius-m: 1rem;
-  --radius-l: 1.75rem;
-  --ease: cubic-bezier(0.22, 1 0.36, 1);
+*,
+*::before,
+*::after{
+   box-sizing: border-box;
 }
-  body {
-   background: var(--bg);
-   color: var(--text);
-   
-  }
+.container {
+   margin-inline: auto;
+}
+.section {
+   padding-block: var(--section-space);
+}
+
+.eyebrow {
+   margin-bottom: 1rem;
+}
+
+.section__title {
+   margin-bottom: 3.5rem;
+}
+
+.section__title:has(+ .section__lead) {
+   margin-bottom: 1.25rem;
+}
+
+.sectiom_lead {
+   margin-bottom: 3rem;
+}
+
+.btn {
+   padding: 0.95rem 1.7rem;
+   border: 1px solid transparent;
+   border-radius: 50%;
+}
+.nav__link{
+   display: block;
+   padding: 0.55rem 1rem;
+   border-radius: 50%;
+}
+
+.hero__inner {
+   padding-block: clamp(3rem, 7vw, 6rem);
+}
