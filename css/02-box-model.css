@@ -2,4 +2,45 @@
    02 · БЛОЧНАЯ МОДЕЛЬ
    Что здесь пишем: box-sizing, padding, margin, border, border-radius у секций, кнопок, карточек
    ========================================================= */
+*,
+*::before,
+*::after{
+   box-sizing: border-box;
+}
+.container {
+   margin-inline: auto;
+}
+.section {
+   padding-block: var(--section-space);
+}
 
+.eyebrow {
+   margin-bottom: 1rem;
+}
+
+.section__title {
+   margin-bottom: 3.5rem;
+}
+
+.section__title:has(+ .section__lead) {
+   margin-bottom: 1.25rem;
+}
+
+.sectiom_lead {
+   margin-bottom: 3rem;
+}
+
+.btn {
+   padding: 0.95rem 1.7rem;
+   border: 1px solid transparent;
+   border-radius: 50%;
+}
+.nav__link{
+   display: block;
+   padding: 0.55rem 1rem;
+   border-radius: 50%;
+}
+
+.hero__inner {
+   padding-block: clamp(3rem, 7vw, 6rem);
+}
